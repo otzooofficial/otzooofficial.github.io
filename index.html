@@ -17,47 +17,52 @@ color:white;
 display:flex;
 align-items:center;
 justify-content:center;
-height:100vh;
+/* Height ko min-height kiya taaki content fit ho sake */
+min-height: 100vh; 
 text-align:center;
+padding: 40px 20px; /* Thoda space upar niche ke liye */
 }
 
 .container{
 max-width:800px;
-padding:20px;
+width: 100%;
 margin:auto;
 }
 
 h1{
-font-size:50px;
+font-size: clamp(32px, 8vw, 50px); /* Responsive font size */
 font-weight:900;
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
 h1 span{color:#FFD700;}
 
-p{
+p.tagline {
 color:rgba(255,255,255,0.7);
-margin-bottom:40px;
+margin-bottom:30px;
+font-size: 18px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:20px;
-max-width:600px;
+max-width:650px;
 margin:auto;
 }
 
 .card{
 background:rgba(255,255,255,0.08);
 border:1px solid rgba(255,255,255,0.15);
-padding:30px;
+padding:25px 20px;
 border-radius:20px;
 transition:0.3s;
 cursor:pointer;
 text-decoration:none;
 color:white;
-display:block;
+display:flex;
+flex-direction: column;
+justify-content: space-between;
 }
 
 .card:hover{
@@ -66,12 +71,19 @@ background:rgba(255,255,255,0.15);
 }
 
 .card h2{
-margin-bottom:5px;
+margin-bottom:10px;
+font-size: 22px;
+}
+
+.card p {
+font-size: 14px;
+line-height: 1.4;
+color:rgba(255,255,255,0.8);
 }
 
 .logo{
-width:130px;
-margin-bottom:10px;
+width:110px; /* Thoda optimize kiya size */
+margin-bottom:15px;
 filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
 transition:0.3s;
 }
@@ -81,27 +93,32 @@ transform:scale(1.05);
 }
 
 footer{
-position:absolute;
-bottom:20px;
+margin-top: 40px; /* Absolute ki jagah margin use kiya taaki scroll ho sake */
 font-size:12px;
 color:rgba(255,255,255,0.5);
+width: 100%;
 }
 
 /* Mobile responsive */
 @media(max-width:600px){
 .grid{
 grid-template-columns:1fr;
+padding: 0 10px;
+}
+body {
+padding: 20px 10px;
 }
 }
 
-/* 🔥 Button CSS (added) */
+/* 🔥 Button CSS */
 .btn{
-margin-top:15px;
+margin-top:20px;
 display:inline-block;
-padding:10px 15px;
+padding:12px 20px;
 border-radius:30px;
 font-weight:700;
 text-decoration:none;
+font-size: 14px;
 }
 
 .btn1{
@@ -123,31 +140,33 @@ color:#2D0C57;
 <img src="assets/icon/otzoo_icon.png" class="logo">
 
 <h1>Welcome to <span>OTZOO<sup>™</sup></span></h1>
-<p>Find it fast, find it now.</p>
+<p class="tagline">Find it fast, find it now.</p>
 
 <div class="grid">
 
 <a href="otzoo.html" class="card">
+<div>
 <h2>🏪 OTZOO</h2>
 <p>Real-time local truth platform</p>
-<br>
+</div>
 <span class="btn btn1">Open Otzoo</span>
 </a>
 
 <a href="railway.html" class="card">
+<div>
 <h2>🚆 Otzoo Railway AI</h2>
 <p>Smart train tracking & AI predictions</p>
-<br>
+</div>
 <span class="btn btn2">Open Railway AI</span>
 </a>
-
-</div>
 
 </div>
 
 <footer>
 © 2026 OTZOO — Made with ❤️ in India
 </footer>
+
+</div>
 
 </body>
 </html>
