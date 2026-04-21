@@ -95,6 +95,16 @@ color:rgba(255,255,255,0.5);
 .grid{
 grid-template-columns:1fr;
 }
+  .logo{
+width:130px;
+margin-bottom:20px;
+filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+transition:0.3s;
+}
+
+.logo:hover{
+transform:scale(1.05);
+}
 }
 
 </style>
@@ -103,7 +113,8 @@ grid-template-columns:1fr;
 <body>
 
 <div class="container">
-
+  
+<img src="logo.png" alt="OTZOO Logo" class="logo">
 <h1>Welcome to <span>OTZOO<sup>™</sup></span></h1>
 <p>Find it fast, find it now...</p>
 
