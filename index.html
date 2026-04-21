@@ -3,105 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Otzoo Railway AI — Real-Time Train Intelligence</title>
+<title>OTZOO — Choose Your Experience</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800;900&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
-:root{
---purple:#4527A0;
---dark:#2D0C57;
---amber:#FFD700;
---bg:#F8F9FD;
---text:#1A1A2E;
---muted:#6B7280;
-}
-
 body{
 font-family:'Plus Jakarta Sans',sans-serif;
-background:var(--bg);
-color:var(--text);
-}
-
-/* NAV */
-nav{
-position:fixed;
-top:0;left:0;right:0;
-background:rgba(45,12,87,0.95);
-padding:15px 25px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:100;
-}
-
-.logo{
+background:linear-gradient(135deg,#2D0C57,#4527A0);
 color:white;
-font-weight:900;
-letter-spacing:4px;
-}
-
-.nav-btn{
-background:var(--amber);
-padding:8px 20px;
-border-radius:20px;
-font-weight:700;
-text-decoration:none;
-color:black;
-}
-
-/* HERO */
-.hero{
-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
+height:100vh;
 text-align:center;
-background:linear-gradient(135deg,var(--dark),var(--purple));
-color:white;
-padding:100px 20px;
 }
 
-.hero h1{
-font-size:60px;
+.container{
+max-width:800px;
+padding:20px;
+}
+
+h1{
+font-size:50px;
 font-weight:900;
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
-.hero span{color:var(--amber);}
+h1 span{color:#FFD700;}
 
-.hero p{
+p{
 color:rgba(255,255,255,0.7);
-max-width:600px;
-margin:auto;
-margin-bottom:30px;
-}
-
-.btn{
-padding:15px 30px;
-border-radius:40px;
-text-decoration:none;
-font-weight:800;
-}
-
-.btn-main{
-background:var(--amber);
-color:black;
-}
-
-/* FEATURES */
-.section{
-padding:80px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.title{
-font-size:38px;
-font-weight:900;
-margin-bottom:20px;
+margin-bottom:40px;
 }
 
 .grid{
@@ -111,114 +46,78 @@ gap:20px;
 }
 
 .card{
-background:white;
-padding:25px;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.15);
+padding:30px;
 border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:0.3s;
+cursor:pointer;
 }
 
-.card h3{margin-bottom:10px;}
-
-/* HOW */
-.how{
-background:linear-gradient(135deg,var(--dark),var(--purple));
-color:white;
-text-align:center;
-padding:80px 20px;
+.card:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,0.15);
 }
 
-/* FOOTER */
+.card h2{
+margin-bottom:10px;
+}
+
+.btn{
+margin-top:15px;
+display:inline-block;
+padding:10px 20px;
+border-radius:30px;
+font-weight:700;
+text-decoration:none;
+}
+
+.btn1{
+background:#FFD700;
+color:black;
+}
+
+.btn2{
+background:white;
+color:#2D0C57;
+}
+
 footer{
-background:var(--dark);
-color:white;
-padding:40px 20px;
-text-align:center;
+position:absolute;
+bottom:20px;
+font-size:12px;
+color:rgba(255,255,255,0.5);
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-<div class="logo">OTZOO AI</div>
-<a href="#" class="nav-btn">Download</a>
-</nav>
+<div class="container">
 
-<!-- HERO -->
-<section class="hero">
-<div>
-<h1>India ka <span>Smart Railway</span><br>Ab Live Hai 🚆</h1>
-<p>Otzoo Railway AI aapko batata hai train late hai ya nahi, next station kab aayega, aur seat availability — sab kuch real-time AI ke saath.</p>
-<a href="#" class="btn btn-main">🚀 Try Railway AI</a>
-</div>
-</section>
-
-<!-- FEATURES -->
-<section class="section">
-<h2 class="title">AI Powered Features</h2>
+<h1>Welcome to <span>OTZOO</span></h1>
+<p>Choose your experience</p>
 
 <div class="grid">
 
 <div class="card">
-<h3>🚆 Live Train Status</h3>
-<p>Train abhi kaha hai, kitni late hai — real-time AI prediction ke saath.</p>
+<h2>🏪 OTZOO</h2>
+<p>Real-time local shops & services platform</p>
+<a href="otzoo.html" class="btn btn1">Open Otzoo</a>
 </div>
 
 <div class="card">
-<h3>⏱ Next Station Alerts</h3>
-<p>Automatic alert: “Next station in 5 min” — bina app khole.</p>
-</div>
-
-<div class="card">
-<h3>🧠 Smart Delay Prediction</h3>
-<p>Historical + live data se AI delay predict karta hai.</p>
-</div>
-
-<div class="card">
-<h3>📊 Reliability Score</h3>
-<p>Har train ka trust score — kitna accurate hai data.</p>
-</div>
-
-<div class="card">
-<h3>📍 Platform Info</h3>
-<p>Platform number + changes — real-time updates.</p>
-</div>
-
-<div class="card">
-<h3>👥 Crowd Verification</h3>
-<p>Passengers confirm karte hai — data aur strong banta hai.</p>
+<h2>🚆 Railway AI</h2>
+<p>Smart train tracking & AI predictions</p>
+<a href="railway.html" class="btn btn2">Open Railway AI</a>
 </div>
 
 </div>
-</section>
 
-<!-- HOW -->
-<section class="how">
-<h2>Kaise Kaam Karta Hai?</h2>
-<p style="margin-top:15px;color:rgba(255,255,255,0.7);">
+</div>
 
-1. Train number daalo <br><br>
-2. Live data fetch hota hai <br><br>
-3. AI predict karta hai future status
-
-</p>
-</section>
-
-<!-- CTA -->
-<section class="section" style="text-align:center;">
-<h2 class="title">Ab Travel Smart Banao 🚆</h2>
-<p style="color:var(--muted);margin-bottom:30px;">
-Ab guessing band — sirf real-time sach.
-</p>
-
-<a href="#" class="btn btn-main">Download App</a>
-</section>
-
-<!-- FOOTER -->
 <footer>
-<p>© 2026 Otzoo Railway AI</p>
-<p>Made in India 🇮🇳</p>
+© 2026 OTZOO — Built in India 🇮🇳
 </footer>
 
 </body>
