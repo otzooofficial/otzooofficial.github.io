@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OTZOO™ — Find it fast, find it now...</title>
+<title>OTZOO™ — Find it fast, find it now.</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800;900&display=swap" rel="stylesheet">
 
@@ -24,12 +24,13 @@ text-align:center;
 .container{
 max-width:800px;
 padding:20px;
+margin:auto;
 }
 
 h1{
 font-size:50px;
 font-weight:900;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
 h1 span{color:#FFD700;}
@@ -54,6 +55,9 @@ padding:30px;
 border-radius:20px;
 transition:0.3s;
 cursor:pointer;
+text-decoration:none;
+color:white;
+display:block;
 }
 
 .card:hover{
@@ -63,25 +67,6 @@ background:rgba(255,255,255,0.15);
 
 .card h2{
 margin-bottom:10px;
-}
-
-.btn{
-margin-top:15px;
-display:inline-block;
-padding:10px 20px;
-border-radius:30px;
-font-weight:700;
-text-decoration:none;
-}
-
-.btn1{
-background:#FFD700;
-color:black;
-}
-
-.btn2{
-background:white;
-color:#2D0C57;
 }
 
 .logo{
@@ -102,7 +87,7 @@ font-size:12px;
 color:rgba(255,255,255,0.5);
 }
 
-/* 👇 sirf grid mobile ke liye */
+/* Mobile responsive */
 @media(max-width:600px){
 .grid{
 grid-template-columns:1fr;
@@ -114,24 +99,23 @@ grid-template-columns:1fr;
 <body>
 
 <div class="container">
-  
+
 <img src="logo.png" alt="OTZOO Logo" class="logo">
+
 <h1>Welcome to <span>OTZOO<sup>™</sup></span></h1>
-<p>Find it fast, find it now...</p>
+<p>Find it fast, find it now.</p>
 
 <div class="grid">
 
-<div class="card">
+<a href="otzoo.html" class="card">
 <h2>🏪 OTZOO</h2>
 <p>Real-time local truth platform</p>
-<a href="otzoo.html" class="btn btn1">Open Otzoo</a>
-</div>
+</a>
 
-<div class="card">
+<a href="railway.html" class="card">
 <h2>🚆 Otzoo Railway AI</h2>
 <p>Smart train tracking & AI predictions</p>
-<a href="railway.html" class="btn btn2">Open Otzoo Railway AI</a>
-</div>
+</a>
 
 </div>
 
