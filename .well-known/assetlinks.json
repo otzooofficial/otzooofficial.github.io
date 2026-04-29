@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.otzoo.live.otzoo",
       "sha256_cert_fingerprints": [
-        "6E:FF:9F:F8:8E:FD:C3:9E:D7:CD:D6:6E:30:44:F4:63:74:E7:F2:C8:07:2E:75:57:2D:DE:E3:42:CD:22:BC:62"
+        "6E:FF:9F:F8:8E:FD:C3:9E:D7:CD:D6:6E:30:44:F4:63:74:E7:F2:C8:07:2E:75:57:2D:DE:E3:42:CD:22:BC:62",
+        "F4:11:C8:93:03:D1:2B:FC:E3:C5:EF:6B:00:3A:EC:7D:87:27:DF:59:81:25:7C:A8:BA:1E:D1:CC:60:E7:00:1F"
       ]
     }
   }
