@@ -2,7 +2,7 @@
 google.com, pub-4655993882065072, DIRECT, f08c47fec0942fa0
 
 # Meta Audience Network Bidding
-facebook.com, 100051877470123, RESELLER, c3e20eee3f780d68
+facebook.com, 1046162357288764, RESELLER, c3e20eee3f780d68
 
 # Unity Ads Bidding
 unity3d.com, 5430372, DIRECT, 24d73280144f80c6
