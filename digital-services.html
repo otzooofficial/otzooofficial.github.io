@@ -233,6 +233,34 @@ header p { color: var(--text-dim); font-size: 14px; margin-top: 5px; }
 }
 .page-footer a { color: var(--gold); text-decoration: none; }
 
+/* ===== FLOATING BUTTONS ===== */
+.float-btns {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+.float-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  transition: 0.3s;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.float-btn:hover { transform: scale(1.12); }
+.float-wa { background: #25D366; }
+.float-call { background: #00B0FF; }
+.float-mail { background: #EA4335; }
+
 /* ===== MOBILE ===== */
 @media(max-width: 600px) {
   header { padding: 50px 20px 15px; }
@@ -266,7 +294,7 @@ header p { color: var(--text-dim); font-size: 14px; margin-top: 5px; }
 
 <!-- STATS -->
 <div class="hero-stats">
-  <div class="stat"><div class="stat-num">100+</div><div class="stat-label">Services Available</div></div>
+  <div class="stat"><div class="stat-num">115+</div><div class="stat-label">Services Available</div></div>
   <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">WhatsApp Support</div></div>
   <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Online Process</div></div>
 </div>
@@ -784,10 +812,88 @@ header p { color: var(--text-dim); font-size: 14px; margin-top: 5px; }
     </div>
   </div>
 
+  <!-- 7. Teaching & Education -->
+  <div class="category" data-cat>
+    <div class="cat-header">
+      <span class="cat-icon">📚</span>
+      <span class="cat-title">Teaching, Tuition & Education Help</span>
+      <span class="cat-count">12 Services</span>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-name="Petroleum Engineering Subject Help Tuition">
+        <div class="service-name">Petroleum Engineering — Subject Expert</div>
+        <div class="service-desc">Drilling, reservoir, production, refining, formation evaluation — doubt clear, notes, assignment</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹800/hr</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Petroleum%20Engineering%20Help%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Petroleum Engineering Help" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Chemical Engineering Subject Help Tuition">
+        <div class="service-name">Chemical Engineering — Subject Expert</div>
+        <div class="service-desc">Mass transfer, heat transfer, fluid mechanics, thermodynamics, reaction engineering — notes, numericals, assignments</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹800/hr</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Chemical%20Engineering%20Help%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Chemical Engineering Help" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Mathematics Maths Tuition Help Class">
+        <div class="service-name">Mathematics — All Levels</div>
+        <div class="service-desc">School (6–12), graduation, competitive maths — algebra, calculus, trigonometry, statistics, numericals</div>
+        <div class="service-footer"><span class="price-tag">₹150–₹500/hr</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Maths%20Help%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Maths Help" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Chemistry Tuition Help Class Science">
+        <div class="service-name">Chemistry — All Levels</div>
+        <div class="service-desc">Physical, organic, inorganic chemistry — Class 10–12, BSc, competitive exams doubt clearing</div>
+        <div class="service-footer"><span class="price-tag">₹150–₹500/hr</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Chemistry%20Help%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Chemistry Help" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Science Physics Biology General Tuition">
+        <div class="service-name">Science (Physics / Biology / General)</div>
+        <div class="service-desc">School & graduation level science, concept explain, numericals, diagram help</div>
+        <div class="service-footer"><span class="price-tag">₹150–₹500/hr</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Science%20Help%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Science Help" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="English Grammar Writing Speaking Tuition">
+        <div class="service-name">English — Grammar, Writing & Speaking</div>
+        <div class="service-desc">Grammar, essay, letter writing, comprehension, spoken English, exam preparation</div>
+        <div class="service-footer"><span class="price-tag">₹150–₹400/hr</span><div class="action-btns"><a href="https://wa.me/919770344329?text=English%20Help%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=English Help" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Aptitude Reasoning SSC Bank UPSC Competitive Exam">
+        <div class="service-name">Aptitude & Reasoning (Competitive Exams)</div>
+        <div class="service-desc">Quantitative aptitude, logical reasoning, verbal reasoning — SSC, Bank, Railway, UPSC prep</div>
+        <div class="service-footer"><span class="price-tag">₹150–₹500/hr</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Aptitude%20Reasoning%20Help%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Aptitude Reasoning Help" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Question Paper Banana Make Sample Paper">
+        <div class="service-name">Question Paper / Sample Paper Banana</div>
+        <div class="service-desc">Custom question paper — any subject, any class, MCQ/short/long, with answer key</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹600</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Question%20Paper%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Question Paper" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Assignment Project Report Writing Help">
+        <div class="service-name">Assignment / Project Report Writing</div>
+        <div class="service-desc">University/college assignment, project report, thesis help, formatting</div>
+        <div class="service-footer"><span class="price-tag">₹300–₹1500</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Assignment%20Help%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Assignment Help" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Notes Making Study Material Prepare">
+        <div class="service-name">Notes Making / Study Material</div>
+        <div class="service-desc">Short notes, handwritten style notes, topic-wise study material prepare</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹800</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Notes%20Making%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Notes Making" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Online Tuition Classes Video Call Doubt">
+        <div class="service-name">Online Tuition / Doubt Clearing Session</div>
+        <div class="service-desc">One-on-one session via WhatsApp / Google Meet — any subject, any time</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹600/hr</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Online%20Tuition%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Online Tuition" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="General Knowledge GK Current Affairs Preparation">
+        <div class="service-name">General Knowledge & Current Affairs</div>
+        <div class="service-desc">GK notes, current affairs, India/world, daily quiz prep for competitive exams</div>
+        <div class="service-footer"><span class="price-tag">₹100–₹300</span><div class="action-btns"><a href="https://wa.me/919770344329?text=GK%20Current%20Affairs%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=GK Current Affairs" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+    </div>
+  </div>
+
   <div class="no-results" id="noResults">
     Koi service nahi mili. WhatsApp karo — hum koshish karenge! 💬
   </div>
 
+</div>
+
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="float-btns">
+  <a href="https://wa.me/919770344329?text=Mujhe%20OTZOO%20Digital%20Services%20chahiye" target="_blank" class="float-btn float-wa" title="WhatsApp">💬</a>
+  <a href="tel:+919770344329" class="float-btn float-call" title="Call">📞</a>
+  <a href="mailto:rednwhitet@gmail.com?subject=OTZOO Digital Service Enquiry" class="float-btn float-mail" title="Email">📧</a>
 </div>
 
 <!-- FOOTER -->
