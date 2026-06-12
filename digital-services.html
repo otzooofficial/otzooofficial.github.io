@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTZOO Digital Services — India's Online Kaam Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root {
+  --bg1: #2D0C57;
+  --bg2: #1a3a6b;
+  --gold: #FFD700;
+  --green: #00E676;
+  --blue: #00B0FF;
+  --card-bg: rgba(255,255,255,0.07);
+  --card-border: rgba(255,255,255,0.13);
+  --text-dim: rgba(255,255,255,0.7);
+}
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: linear-gradient(135deg, var(--bg1), #3b1080, var(--bg2));
+  color: white;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.back-btn {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  background: rgba(255,215,0,0.1);
+  border: 1px solid rgba(255,215,0,0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.back-btn:hover { background: rgba(255,215,0,0.2); }
+header h1 { font-size: clamp(22px, 5vw, 36px); font-weight: 900; }
+header h1 span { color: var(--gold); }
+header p { color: var(--text-dim); font-size: 14px; margin-top: 5px; }
+
+/* ===== CONTACT STRIP ===== */
+.contact-strip {
+  background: linear-gradient(90deg, rgba(0,230,120,0.15), rgba(0,176,255,0.15));
+  border-bottom: 1px solid rgba(0,230,120,0.25);
+  padding: 14px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.contact-strip a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 25px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.c-wa { background: #25D366; }
+.c-wa:hover { background: #1ebe5d; }
+.c-mail { background: #EA4335; }
+.c-mail:hover { background: #d33426; }
+.c-call { background: var(--blue); }
+.c-call:hover { background: #009de0; }
+
+/* ===== SEARCH ===== */
+.search-wrap {
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+}
+.search-wrap input {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 15px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  outline: none;
+  transition: 0.3s;
+}
+.search-wrap input::placeholder { color: rgba(255,255,255,0.5); }
+.search-wrap input:focus { border-color: var(--gold); background: rgba(255,255,255,0.15); }
+
+/* ===== MAIN CONTENT ===== */
+.main { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+
+/* ===== CATEGORY ===== */
+.category { margin-bottom: 40px; }
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid rgba(255,255,255,0.1);
+}
+.cat-icon { font-size: 28px; }
+.cat-title { font-size: 20px; font-weight: 800; }
+.cat-count {
+  background: rgba(255,215,0,0.15);
+  color: var(--gold);
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ===== SERVICE CARDS ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 18px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.service-card:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-4px);
+  border-color: rgba(255,215,0,0.3);
+}
+.service-name {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.3;
+}
+.service-desc {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+.service-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  gap: 8px;
+}
+.price-tag {
+  background: rgba(255,215,0,0.12);
+  color: var(--gold);
+  border: 1px solid rgba(255,215,0,0.25);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 13px;
+  font-weight: 800;
+}
+.action-btns {
+  display: flex;
+  gap: 6px;
+}
+.ab {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+.ab-wa { background: rgba(37,211,102,0.2); border: 1px solid rgba(37,211,102,0.4); }
+.ab-wa:hover { background: #25D366; }
+.ab-mail { background: rgba(234,67,53,0.2); border: 1px solid rgba(234,67,53,0.4); }
+.ab-mail:hover { background: #EA4335; }
+.ab-call { background: rgba(0,176,255,0.2); border: 1px solid rgba(0,176,255,0.4); }
+.ab-call:hover { background: var(--blue); }
+
+/* ===== HERO STATS ===== */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+  max-width: 700px;
+  margin: 20px auto 0;
+}
+.stat { text-align: center; }
+.stat-num { font-size: 32px; font-weight: 900; color: var(--gold); }
+.stat-label { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+
+/* ===== NO RESULTS ===== */
+.no-results { text-align: center; padding: 40px; color: var(--text-dim); font-size: 16px; display: none; }
+
+/* ===== FOOTER ===== */
+.page-footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 20px;
+}
+.page-footer a { color: var(--gold); text-decoration: none; }
+
+/* ===== MOBILE ===== */
+@media(max-width: 600px) {
+  header { padding: 50px 20px 15px; }
+  .back-btn { top: 15px; transform: none; font-size: 13px; padding: 6px 12px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="back-btn">← Back</a>
+  <h1>🇮🇳 <span>OTZOO</span> Digital Services</h1>
+  <p>India ke har online kaam ke liye — Ek Expert, Ek Jagah</p>
+</header>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <a href="https://wa.me/919770344329" target="_blank" class="c-wa">
+    💬 WhatsApp: 9770344329
+  </a>
+  <a href="mailto:rednwhitet@gmail.com" class="c-mail">
+    📧 rednwhitet@gmail.com
+  </a>
+  <a href="tel:+919770344329" class="c-call">
+    📞 Call Now
+  </a>
+</div>
+
+<!-- STATS -->
+<div class="hero-stats">
+  <div class="stat"><div class="stat-num">100+</div><div class="stat-label">Services Available</div></div>
+  <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">WhatsApp Support</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Online Process</div></div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+  <input type="text" id="searchInput" placeholder="🔍 Search karo — Aadhaar, GST, Passport, UPI..." oninput="filterServices()">
+</div>
+
+<!-- MAIN -->
+<div class="main" id="mainContent">
+
+  <!-- 1. Govt ID & Documents -->
+  <div class="category" data-cat>
+    <div class="cat-header">
+      <span class="cat-icon">🪪</span>
+      <span class="cat-title">Govt ID & Documents</span>
+      <span class="cat-count">10 Services</span>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-name="Aadhaar New Update Correction">
+        <div class="service-name">Aadhaar Card (New / Update / Correction)</div>
+        <div class="service-desc">New apply, address/name/DOB update, mobile link</div>
+        <div class="service-footer">
+          <span class="price-tag">₹100–₹300</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Aadhaar%20Card%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Aadhaar Card Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="PAN Card New Correction">
+        <div class="service-name">PAN Card (New / Correction)</div>
+        <div class="service-desc">New PAN apply, name correction, address update, reprint</div>
+        <div class="service-footer">
+          <span class="price-tag">₹150–₹300</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=PAN%20Card%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=PAN Card Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Voter ID Apply Correction Transfer">
+        <div class="service-name">Voter ID (Apply / Correction / Transfer)</div>
+        <div class="service-desc">New voter card, name correction, address transfer</div>
+        <div class="service-footer">
+          <span class="price-tag">₹100–₹200</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Voter%20ID%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Voter ID Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Passport Apply Renewal">
+        <div class="service-name">Passport (Apply / Renewal)</div>
+        <div class="service-desc">Fresh passport, renewal, police verification guidance</div>
+        <div class="service-footer">
+          <span class="price-tag">₹500–₹800</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Passport%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Passport Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Birth Death Certificate">
+        <div class="service-name">Birth / Death Certificate</div>
+        <div class="service-desc">Online apply, correction, download</div>
+        <div class="service-footer">
+          <span class="price-tag">₹100–₹200</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Birth%20Death%20Certificate%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Birth/Death Certificate" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Caste Income Domicile Residence Certificate">
+        <div class="service-name">Caste / Income / Domicile / Residence Certificate</div>
+        <div class="service-desc">SC/ST/OBC certificate, income certificate, residence proof</div>
+        <div class="service-footer">
+          <span class="price-tag">₹100–₹250</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Certificate%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Certificate Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="DigiLocker Account Documents">
+        <div class="service-name">DigiLocker Setup & Documents</div>
+        <div class="service-desc">Account create, documents link, download verified copies</div>
+        <div class="service-footer">
+          <span class="price-tag">₹50–₹100</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=DigiLocker%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=DigiLocker Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Driving License Apply Renewal">
+        <div class="service-name">Driving License (Apply / Renewal)</div>
+        <div class="service-desc">Learner's license, DL apply, renewal, address update</div>
+        <div class="service-footer">
+          <span class="price-tag">₹200–₹500</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Driving%20License%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Driving License Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Vehicle RC Registration Transfer">
+        <div class="service-name">Vehicle RC / Transfer / Fitness</div>
+        <div class="service-desc">RC apply, transfer, fitness certificate, number plate</div>
+        <div class="service-footer">
+          <span class="price-tag">₹200–₹500</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Vehicle%20RC%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Vehicle RC Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Marksheet Apply Correction">
+        <div class="service-name">Marksheet / Migration Certificate</div>
+        <div class="service-desc">Board marksheet apply, correction, migration certificate</div>
+        <div class="service-footer">
+          <span class="price-tag">₹150–₹400</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Marksheet%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Marksheet Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Banking & UPI -->
+  <div class="category" data-cat>
+    <div class="cat-header">
+      <span class="cat-icon">🏦</span>
+      <span class="cat-title">Banking, UPI & Finance</span>
+      <span class="cat-count">12 Services</span>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-name="Bank Account Open Saving Current">
+        <div class="service-name">Bank Account Open (Saving / Current / Zero Balance)</div>
+        <div class="service-desc">SBI, PNB, HDFC, ICICI, BOB, all banks online account opening</div>
+        <div class="service-footer">
+          <span class="price-tag">₹100–₹200</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Bank%20Account%20Opening%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Bank Account Opening" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Net Banking Mobile Banking Activate">
+        <div class="service-name">Net Banking / Mobile Banking Setup</div>
+        <div class="service-desc">Activate, password reset, YONO, iMobile, BOB World etc.</div>
+        <div class="service-footer">
+          <span class="price-tag">₹100–₹200</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Net%20Banking%20Setup%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Net Banking Setup" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="UPI GPay PhonePe Paytm Setup">
+        <div class="service-name">UPI Setup & Troubleshoot (GPay / PhonePe / Paytm)</div>
+        <div class="service-desc">UPI ID create, PIN set, problem fix, refund complaint</div>
+        <div class="service-footer">
+          <span class="price-tag">₹50–₹150</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=UPI%20Setup%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=UPI Setup" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Bank Account Update Correction Name Address Mobile">
+        <div class="service-name">Bank Account Correction / Update</div>
+        <div class="service-desc">Name, address, mobile, nominee, email, Aadhaar-PAN link</div>
+        <div class="service-footer">
+          <span class="price-tag">₹100–₹200</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Bank%20Account%20Update%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Bank Account Update" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Income Tax Return ITR Filing">
+        <div class="service-name">Income Tax Return (ITR) Filing</div>
+        <div class="service-desc">ITR-1, ITR-2, ITR-4, salary/business income, refund tracking</div>
+        <div class="service-footer">
+          <span class="price-tag">₹500–₹1500</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=ITR%20Filing%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=ITR Filing" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="GST Registration Return Filing">
+        <div class="service-name">GST Registration & Return Filing</div>
+        <div class="service-desc">GST registration, GSTR-1, GSTR-3B monthly/quarterly filing</div>
+        <div class="service-footer">
+          <span class="price-tag">₹500–₹2000</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=GST%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=GST Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Loan Apply Personal Home Business Mudra">
+        <div class="service-name">Loan Apply (Personal / Home / Business / Mudra)</div>
+        <div class="service-desc">Online loan application, document help, EMI planning</div>
+        <div class="service-footer">
+          <span class="price-tag">₹300–₹800</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Loan%20Apply%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Loan Apply" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Demat Account Zerodha Groww Upstox Mutual Fund">
+        <div class="service-name">Demat Account / Mutual Fund / SIP</div>
+        <div class="service-desc">Zerodha, Groww, Upstox account open, SIP start, investment guide</div>
+        <div class="service-footer">
+          <span class="price-tag">₹200–₹400</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Demat%20Account%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Demat Account" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="CIBIL Score Check Improve">
+        <div class="service-name">CIBIL Score Check & Improve</div>
+        <div class="service-desc">Credit score check, error dispute, improvement tips</div>
+        <div class="service-footer">
+          <span class="price-tag">₹100–₹200</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=CIBIL%20Score%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=CIBIL Score" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="UPI Fraud Complaint Cyber Crime Refund">
+        <div class="service-name">UPI Fraud / Cyber Crime Complaint</div>
+        <div class="service-desc">cybercrime.gov.in complaint, 1930 helpline, refund process</div>
+        <div class="service-footer">
+          <span class="price-tag">₹200–₹500</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Cyber%20Complaint%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Cyber Complaint" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="PF EPFO Withdrawal Transfer">
+        <div class="service-name">PF / EPFO Withdrawal & Transfer</div>
+        <div class="service-desc">PF claim, UAN activate, KYC update, transfer online</div>
+        <div class="service-footer">
+          <span class="price-tag">₹200–₹500</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=PF%20EPFO%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=PF EPFO Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card" data-name="Insurance Apply LIC Health Term Vehicle">
+        <div class="service-name">Insurance Apply (LIC / Health / Term / Vehicle)</div>
+        <div class="service-desc">Policy select, online apply, renewal, claim guidance</div>
+        <div class="service-footer">
+          <span class="price-tag">₹200–₹400</span>
+          <div class="action-btns">
+            <a href="https://wa.me/919770344329?text=Insurance%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a>
+            <a href="mailto:rednwhitet@gmail.com?subject=Insurance Service" class="ab ab-mail">📧</a>
+            <a href="tel:+919770344329" class="ab ab-call">📞</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Business Registration -->
+  <div class="category" data-cat>
+    <div class="cat-header">
+      <span class="cat-icon">🏢</span>
+      <span class="cat-title">Business & Shop Registration</span>
+      <span class="cat-count">10 Services</span>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-name="Company Registration Pvt Ltd LLP OPC">
+        <div class="service-name">Company Registration (Pvt Ltd / LLP / OPC)</div>
+        <div class="service-desc">MCA portal, DIN, DSC, MOA/AOA drafting, incorporation</div>
+        <div class="service-footer"><span class="price-tag">₹2000–₹5000</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Company%20Registration%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Company Registration" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="MSME Udyam Registration">
+        <div class="service-name">MSME / Udyam Registration</div>
+        <div class="service-desc">Free govt registration for micro/small/medium businesses</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹400</span><div class="action-btns"><a href="https://wa.me/919770344329?text=MSME%20Registration%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=MSME Registration" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Shop Establishment Trade License">
+        <div class="service-name">Shop & Establishment / Trade License</div>
+        <div class="service-desc">Local body registration, shop license, renewal</div>
+        <div class="service-footer"><span class="price-tag">₹300–₹600</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Shop%20Registration%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Shop Registration" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="FSSAI Food License FMCG">
+        <div class="service-name">FSSAI License (Food / FMCG / Restaurant)</div>
+        <div class="service-desc">Basic, state, central license apply, renewal</div>
+        <div class="service-footer"><span class="price-tag">₹500–₹1000</span><div class="action-btns"><a href="https://wa.me/919770344329?text=FSSAI%20License%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=FSSAI License" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Import Export IEC Code">
+        <div class="service-name">Import Export Code (IEC) Apply</div>
+        <div class="service-desc">DGFT portal, IEC apply, export documents, AD code</div>
+        <div class="service-footer"><span class="price-tag">₹500–₹1000</span><div class="action-btns"><a href="https://wa.me/919770344329?text=IEC%20Code%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=IEC Code" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Bar Liquor License Hotel Registration">
+        <div class="service-name">Bar / Hotel / Tourism License</div>
+        <div class="service-desc">Liquor license, hotel registration, tourism department</div>
+        <div class="service-footer"><span class="price-tag">₹1000–₹3000</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Bar%20Hotel%20License%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Bar/Hotel License" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="GeM Portal Tender Registration">
+        <div class="service-name">GeM Portal / Tender Registration & Apply</div>
+        <div class="service-desc">GeM seller registration, bid apply, eProcurement tender</div>
+        <div class="service-footer"><span class="price-tag">₹500–₹2000</span><div class="action-btns"><a href="https://wa.me/919770344329?text=GeM%20Tender%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=GeM Tender" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Startup India Registration Funding">
+        <div class="service-name">Startup India Registration & Funding Apply</div>
+        <div class="service-desc">DPIIT recognition, scheme funding, incubation apply</div>
+        <div class="service-footer"><span class="price-tag">₹500–₹1500</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Startup%20Registration%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Startup Registration" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Drug Medical Store License">
+        <div class="service-name">Drug License (Medical Store)</div>
+        <div class="service-desc">Retail drug license, renewal, state pharmacy board</div>
+        <div class="service-footer"><span class="price-tag">₹800–₹2000</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Drug%20License%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Drug License" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Pollution NOC Certificate">
+        <div class="service-name">Pollution NOC / Consent Certificate</div>
+        <div class="service-desc">PCB consent to establish/operate, NOC for business</div>
+        <div class="service-footer"><span class="price-tag">₹500–₹1500</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Pollution%20NOC%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Pollution NOC" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Govt Schemes -->
+  <div class="category" data-cat>
+    <div class="cat-header">
+      <span class="cat-icon">🏛️</span>
+      <span class="cat-title">Govt Schemes & Welfare</span>
+      <span class="cat-count">10 Services</span>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-name="PM Awas Yojana Housing Scheme Apply">
+        <div class="service-name">PM Awas Yojana (Housing Scheme)</div>
+        <div class="service-desc">Urban/Rural apply, eligibility check, status track</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹500</span><div class="action-btns"><a href="https://wa.me/919770344329?text=PM%20Awas%20Yojana%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=PM Awas Yojana" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Ayushman Bharat Card Health">
+        <div class="service-name">Ayushman Bharat Card</div>
+        <div class="service-desc">PMJAY card apply, eligibility, hospital list</div>
+        <div class="service-footer"><span class="price-tag">₹100–₹200</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Ayushman%20Card%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Ayushman Card" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="PM Kisan Samman Nidhi Agriculture">
+        <div class="service-name">PM Kisan Samman Nidhi</div>
+        <div class="service-desc">Registration, e-KYC, status check, correction</div>
+        <div class="service-footer"><span class="price-tag">₹100–₹200</span><div class="action-btns"><a href="https://wa.me/919770344329?text=PM%20Kisan%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=PM Kisan" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Ration Card Apply Correction">
+        <div class="service-name">Ration Card (Apply / Correction)</div>
+        <div class="service-desc">New ration card, member add, address correction</div>
+        <div class="service-footer"><span class="price-tag">₹100–₹200</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Ration%20Card%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Ration Card" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Scholarship Apply State Central">
+        <div class="service-name">Scholarship Apply (State / Central)</div>
+        <div class="service-desc">NSP portal, pre/post matric scholarship, status track</div>
+        <div class="service-footer"><span class="price-tag">₹100–₹300</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Scholarship%20Apply%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Scholarship Apply" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Labour Shramik Card Apply">
+        <div class="service-name">Labour / Shramik Card Apply</div>
+        <div class="service-desc">Construction worker card, benefits claim</div>
+        <div class="service-footer"><span class="price-tag">₹100–₹200</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Labour%20Card%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Labour Card" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Widow Disability Old Age Pension">
+        <div class="service-name">Pension Apply (Widow / Disability / Old Age)</div>
+        <div class="service-desc">State pension scheme apply, status, correction</div>
+        <div class="service-footer"><span class="price-tag">₹150–₹300</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Pension%20Apply%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Pension Apply" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="LPG Connection Ujjwala Apply">
+        <div class="service-name">LPG Connection / Ujjwala Yojana</div>
+        <div class="service-desc">New LPG apply, Ujjwala 2.0, subsidy check</div>
+        <div class="service-footer"><span class="price-tag">₹100–₹200</span><div class="action-btns"><a href="https://wa.me/919770344329?text=LPG%20Connection%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=LPG Connection" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Vacancy Form Fill Govt Job Apply">
+        <div class="service-name">Govt Job / Vacancy Form Fill</div>
+        <div class="service-desc">SSC, Railway, Police, State PSC, all vacancy forms</div>
+        <div class="service-footer"><span class="price-tag">₹100–₹300</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Vacancy%20Form%20Fill%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Vacancy Form Fill" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Govt Funding Schemes Apply">
+        <div class="service-name">Govt Funding / Subsidy Schemes Apply</div>
+        <div class="service-desc">PMEGP, CGTMSE, state subsidy, agriculture scheme</div>
+        <div class="service-footer"><span class="price-tag">₹500–₹2000</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Funding%20Scheme%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Funding Scheme" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Legal & Complaint -->
+  <div class="category" data-cat>
+    <div class="cat-header">
+      <span class="cat-icon">⚖️</span>
+      <span class="cat-title">Legal, FIR & Complaint</span>
+      <span class="cat-count">7 Services</span>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-name="Online FIR Filing Police Complaint">
+        <div class="service-name">Online FIR Filing</div>
+        <div class="service-desc">State police portal FIR, complaint status, guidance</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹400</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Online%20FIR%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Online FIR" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Petition Writing Legal Application">
+        <div class="service-name">Petition / Application / Legal Draft Writing</div>
+        <div class="service-desc">Petition, affidavit, legal notice, complaint letter draft</div>
+        <div class="service-footer"><span class="price-tag">₹300–₹800</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Petition%20Writing%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Petition Writing" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="RTI Right to Information Filing">
+        <div class="service-name">RTI Filing (Right to Information)</div>
+        <div class="service-desc">Online RTI apply, reply follow-up, first appeal</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹400</span><div class="action-btns"><a href="https://wa.me/919770344329?text=RTI%20Filing%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=RTI Filing" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Consumer Court Complaint NCDRC">
+        <div class="service-name">Consumer Court Complaint</div>
+        <div class="service-desc">NCDRC portal, consumer forum complaint filing</div>
+        <div class="service-footer"><span class="price-tag">₹300–₹500</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Consumer%20Complaint%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Consumer Complaint" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Rent Agreement Draft">
+        <div class="service-name">Rent Agreement Draft</div>
+        <div class="service-desc">Rental agreement, e-stamp, notary guidance</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹400</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Rent%20Agreement%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Rent Agreement" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="CPGRAMS Grievance CM Helpline Complaint">
+        <div class="service-name">CPGRAMS / CM Helpline Grievance</div>
+        <div class="service-desc">Govt grievance portal complaint, follow-up, escalation</div>
+        <div class="service-footer"><span class="price-tag">₹100–₹200</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Grievance%20Filing%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Grievance Filing" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Power of Attorney POA Affidavit">
+        <div class="service-name">Power of Attorney / Affidavit</div>
+        <div class="service-desc">POA draft, affidavit, e-stamp, notarization guidance</div>
+        <div class="service-footer"><span class="price-tag">₹300–₹600</span><div class="action-btns"><a href="https://wa.me/919770344329?text=POA%20Affidavit%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=POA Affidavit" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Design & Tech -->
+  <div class="category" data-cat>
+    <div class="cat-header">
+      <span class="cat-icon">💻</span>
+      <span class="cat-title">Design, Tech & App Services</span>
+      <span class="cat-count">8 Services</span>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-name="Photo Editing Poster Banner Design">
+        <div class="service-name">Photo Editing / Poster / Banner Design</div>
+        <div class="service-desc">Professional photo edit, event poster, shop banner</div>
+        <div class="service-footer"><span class="price-tag">₹100–₹500</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Design%20Service%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Design Service" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Visiting Card Business Card Design Print">
+        <div class="service-name">Visiting Card Design</div>
+        <div class="service-desc">Professional business card design, digital + print ready</div>
+        <div class="service-footer"><span class="price-tag">₹100–₹300</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Visiting%20Card%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Visiting Card" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Website Development Design">
+        <div class="service-name">Website Development</div>
+        <div class="service-desc">Business website, portfolio, landing page, e-commerce</div>
+        <div class="service-footer"><span class="price-tag">₹2000–₹10000</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Website%20Development%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Website Development" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Android App Development Play Store">
+        <div class="service-name">Android App Development & Play Store</div>
+        <div class="service-desc">App design, development, AdMob, Play Store publish, ASO</div>
+        <div class="service-footer"><span class="price-tag">₹3000–₹15000</span><div class="action-btns"><a href="https://wa.me/919770344329?text=App%20Development%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=App Development" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Google My Business Setup SEO">
+        <div class="service-name">Google My Business Setup & SEO</div>
+        <div class="service-desc">GMB profile, local SEO, reviews, visibility improvement</div>
+        <div class="service-footer"><span class="price-tag">₹500–₹1000</span><div class="action-btns"><a href="https://wa.me/919770344329?text=GMB%20Setup%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=GMB Setup" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="WhatsApp Business Setup">
+        <div class="service-name">WhatsApp Business Setup</div>
+        <div class="service-desc">Profile setup, catalog, quick replies, broadcast</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹400</span><div class="action-btns"><a href="https://wa.me/919770344329?text=WhatsApp%20Business%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=WhatsApp Business" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="Computer Software Problem Solve">
+        <div class="service-name">Computer / Software Problem Solve</div>
+        <div class="service-desc">Windows, drivers, software install, virus remove, setup</div>
+        <div class="service-footer"><span class="price-tag">₹200–₹500</span><div class="action-btns"><a href="https://wa.me/919770344329?text=Computer%20Help%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=Computer Help" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+      <div class="service-card" data-name="AdSense AdMob Monetization Setup">
+        <div class="service-name">AdSense / AdMob Monetization Setup</div>
+        <div class="service-desc">Google AdSense apply, AdMob integrate, earning setup</div>
+        <div class="service-footer"><span class="price-tag">₹500–₹1500</span><div class="action-btns"><a href="https://wa.me/919770344329?text=AdSense%20Setup%20chahiye" target="_blank" class="ab ab-wa">💬</a><a href="mailto:rednwhitet@gmail.com?subject=AdSense Setup" class="ab ab-mail">📧</a><a href="tel:+919770344329" class="ab ab-call">📞</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-results" id="noResults">
+    Koi service nahi mili. WhatsApp karo — hum koshish karenge! 💬
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="page-footer">
+  <p>📧 <a href="mailto:rednwhitet@gmail.com">rednwhitet@gmail.com</a> &nbsp;|&nbsp; 📞 <a href="tel:+919770344329">9770344329</a> &nbsp;|&nbsp; 💬 <a href="https://wa.me/919770344329" target="_blank">WhatsApp</a></p>
+  <p style="margin-top:8px;">© 2026 OTZOO Digital Services — Made with ❤️ in India</p>
+</div>
+
+<script>
+function filterServices() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.service-card');
+  const categories = document.querySelectorAll('.category');
+  let totalVisible = 0;
+
+  categories.forEach(cat => {
+    let catVisible = 0;
+    cat.querySelectorAll('.service-card').forEach(card => {
+      const name = card.getAttribute('data-name').toLowerCase();
+      const text = card.innerText.toLowerCase();
+      if (name.includes(q) || text.includes(q)) {
+        card.style.display = '';
+        catVisible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    cat.style.display = catVisible > 0 ? '' : 'none';
+    totalVisible += catVisible;
+  });
+
+  document.getElementById('noResults').style.display = totalVisible === 0 ? 'block' : 'none';
+}
+</script>
+</body>
+</html>
